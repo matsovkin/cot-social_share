@@ -1,0 +1,158 @@
+@CHARSET "UTF-8";
+.listblock{
+	/* float:left; */
+	margin: 0px 10px;
+	/* width:170px; */
+}
+
+li.s_item{
+	display:inline;
+	list-style: none;
+
+}
+li.s_item label{
+	display:block;
+	float:left;
+	padding:7px 0 0;
+	width:170px;
+}
+div.all_cb {
+	margin: 10px 10px 0 10px;
+}
+.checkblocks{
+	display:block;
+	clear: both;
+	overflow: hidden;
+	padding:15px 0;
+}
+
+.b-share__list {
+	margin: 5px 0;
+}
+
+.b-share__list-icons {
+	overflow: hidden;
+}
+
+.b-share__list-icons .s_item {
+	position: relative;
+	float: left;
+	margin: 30px 21px 0 0;
+}
+
+.b-share__list-icons .s_item i {
+	position: absolute;
+	margin: -17px 0 0;
+}
+
+.s_item {
+	margin: 10px 0;
+}
+
+.s_item i {
+	display: -moz-inline-box;
+	display: inline-block;
+	margin: 0 8px 0;
+	width: 16px;
+	height: 16px;
+	background-image: url("../img/b-share-icon.png");
+}
+
+.s_icon {
+    display: inline;
+    float: left;
+    overflow: hidden;
+    padding: 0 !important;
+    width: 16px;
+    height: 16px;
+    border: 0 none;
+    background: url("../img/b-share-icon.png") no-repeat scroll 0 99px transparent;
+    vertical-align: top;
+}
+
+    .s_icon_vkontakte, .s_icon_custom {
+    background-position: 0 0;
+}
+.s_icon_yaru, .s_icon_yaru_photo, .s_icon_yaru_wishlist {
+    background-position: 0 -17px;
+}
+.s_icon_lj {
+    background-position: 0 -34px;
+}
+.s_icon_twitter {
+    background-position: 0 -51px;
+}
+.s_icon_facebook {
+    background-position: 0 -68px;
+}
+.s_icon_moimir {
+    background-position: 0 -85px;
+}
+.s_icon_friendfeed {
+    background-position: 0 -102px;
+}
+.s_icon_mail {
+    background-position: 0 -119px;
+}
+.s_icon_html {
+    background-position: 0 -136px;
+}
+.s_icon_postcard {
+    background-position: 0 -153px;
+}
+.s_icon_odnoklassniki {
+    background-position: 0 -170px;
+}
+.s_icon_blogger {
+    background-position: 0 -187px;
+}
+.s_icon_greader {
+    background-position: 0 -204px;
+}
+.s_icon_delicious {
+    background-position: 0 -221px;
+}
+.s_icon_gbuzz {
+    background-position: 0 -238px;
+}
+.s_icon_linkedin {
+    background-position: 0 -255px;
+}
+.s_icon_myspace {
+    background-position: 0 -272px;
+}
+.s_icon_evernote {
+    background-position: 0 -289px;
+}
+.s_icon_digg {
+    background-position: 0 -306px;
+}
+.s_icon_juick {
+    background-position: 0 -324px;
+}
+.s_icon_moikrug {
+    background-position: 0 -341px;
+}
+.s_icon_yazakladki {
+    background-position: 0 -358px;
+}
+.s_icon_liveinternet {
+    background-position: 0 -375px;
+}
+.s_icon_tutby {
+    background-position: 0 -392px;
+}
+.s_icon_diary {
+    background-position: 0 -409px;
+}
+.s_icon_gplus {
+    background-position: 0 -426px;
+}
+.s_icon_pocket {
+    background-position: 0 -443px;
+}
+.s_icon_surfingbird {
+    background-position: 0 -460px;
+}
+.s_icon_pinterest {
+    background-position: 0 -477px;
