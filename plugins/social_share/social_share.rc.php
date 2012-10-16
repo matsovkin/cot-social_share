@@ -39,6 +39,8 @@ if (defined('COT_ADMIN') && // in plugin config page
 }
 
 if (defined('SOCIAL_SHARE') || defined('SOCIAL_SHARE_CONF')) { // common code
+	class_exists('XTemplate') || require $cfg['system_dir'] . '/cotemplate.php';
+
 	// used services
 	$socs_services = array('blogger','digg','evernote','delicious','diary',
 					'facebook','friendfeed','gplus','greader',
