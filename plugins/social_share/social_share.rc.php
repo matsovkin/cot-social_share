@@ -9,7 +9,7 @@ Hooks=rc
  * Header file for Social share plugin
  *
  * @package social_share
- * @version 0.1.0
+ * @version 0.1.2
  * @author Andrey Matsovkin
  * @copyright Copyright (c) 2008-2012
  * @license Distributed under BSD License.
@@ -19,8 +19,11 @@ if (!defined('COT_CODE') && !defined('COT_PLUG')) { die('Wrong URL ('.array_pop(
 $plug_name = 'social_share';
 
 // to use outside hook code
-global $socs_services, $socs_cfg, $socs_service_data, $sevice_names, $socs_tpl;
+global $socs_services, $socs_cfg, $socs_service_data, $sevice_names, $socs_tpl, $rc_link_func;
 $socs_cfg = $cfg['plugin'][$plug_name]; // get plug conf
+
+$rc_link_func = 'cot_rc_link_footer';
+$rc_embed_func = 'cot_rc_embed_footer';
 
 if ((empty($_GET['e']) && !defined('COT_ADMIN'))
 				|| $_GET['e'] == 'page'
@@ -36,6 +39,13 @@ if (defined('COT_ADMIN') && // in plugin config page
 
 	define('SOCIAL_SHARE_CONF',true);
 	define('EXTDEV_OFF',true); // switch off ExtDev if exists
+	$version = str_replace('.','',$cfg['version']);
+	// tracks buggy admin theme template
+	// used header cot_rc functions instead fotter versions for Cotonti prior v.9.8
+	if ($version<98) {
+		$rc_link_func = 'cot_rc_add_file';
+		$rc_embed_func = 'cot_rc_embed';
+	}
 }
 
 if (defined('SOCIAL_SHARE') || defined('SOCIAL_SHARE_CONF')) { // common code
@@ -56,18 +66,22 @@ if (defined('SOCIAL_SHARE') || defined('SOCIAL_SHARE_CONF')) { // common code
 	} else {
 		$socs_cfg['lang'] = $lang_comp[$usr['lang']] ? $lang_comp[$usr['lang']] : $socs_cfg['default_lang'];
 	}
+
 	if ($socs_cfg['cdn_use']) { // loads lib
-		cot_rc_link_footer('//yandex.st/share/share.js');
-	}else cot_rc_link_footer($cfg['plugins_dir'] . '/social_share/js/share.js');
+		$rc_link_func('//yandex.st/share/share.js');
+	} else $rc_link_func($cfg['plugins_dir'] . '/social_share/js/share.js');
+	require_once cot_incfile($plug_name, 'plug');
+
 }
 
 if (defined('SOCIAL_SHARE')) {
 	$socs_tpl = new XTemplate(cot_tplfile($plug_name, 'plug'));
-	require_once cot_incfile($plug_name, 'plug');
 }
 
 if (defined('SOCIAL_SHARE_CONF')) { // only for config part
 	cot_rc_link_file($cfg['plugins_dir'] . '/social_share/tpl/social_share.css');
+	if ($cfg['jquery']) $rc_link_func($cfg['plugins_dir'].'/social_share/js/social_share.admin.js');
+	else $rc_link_func($cfg['plugins_dir'].'/social_share/js/social_share.admin.nojquery.js');
 
 	// for extending Extension config page
 	$R['ss_listitem'] = ' {$item},&nbsp;';
@@ -79,7 +93,7 @@ if (defined('SOCIAL_SHARE_CONF')) { // only for config part
 	$R['input_textarea'] = '<textarea id="{$name}" name="{$name}" rows="{$rows}" cols="{$cols}"{$attrs}>{$value}</textarea>{$error}';
 
 	$ttl = htmlspecialchars($cfg['maintitle'].'. '.$cfg['subtitle'],ENT_QUOTES);
-	cot_rc_embed_footer("var url='{$cfg['mainurl']}', title='$ttl', lang='{$socs_cfg['lang']}';");
+	$rc_embed_func("var url='{$cfg['mainurl']}', title='$ttl', lang='{$socs_cfg['lang']}';");
 
 	$all_services_data = array(
 					'blogger' => array('link'=>'http://www.blogger.com/','name'=>'Blogger'),

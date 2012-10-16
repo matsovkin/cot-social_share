@@ -12,22 +12,22 @@ defined('COT_CODE') or die('Wrong URL');
 $L['plu_title'] = 'Social share'; // для заголовка страницы
 $L['info_desc'] ='Adds «Share» block for sharing in social networks';
 
-$L['cfg_load_type'] = 'Loads library ';
+$L['cfg_load_type'] = array('Loads library ');
 $L['cfg_load_type_params'] = array('Only on pages, news, forums','On all pages of site');
 
-$L['cfg_cdn_use'] = 'Source to load share.js lib (43kb)';
+$L['cfg_cdn_use'] = array('Source to load share.js lib (43kb)');
 $L['cfg_cdn_use_params'] = array('this site','from Yandex CDN');
 
-$L['cfg_default_lang'] = 'Language of widget if not fit users default';
+$L['cfg_default_lang'] = array('Language of widget if not fit users default');
 $L['cfg_default_lang_params'] = array('English','Russian','Belorusian','Ukrainian','Kazahstan','Tatarstan');
 
-$L['cfg_force_lang'] = 'Force default language for widget (always use default)';
+$L['cfg_force_lang'] = array('Force default language for widget (always use default)');
 $L['cfg_force_lang_params'] = array($L['Yes'], $L['No']);
 
-$L['cfg_block_type'] = 'Widget view type';
+$L['cfg_block_type'] = array('Widget view type');
 $L['cfg_block_type_params'] = array('button','link','icon','without pop-up block');
 
-$L['cfg_sample_block'] = '«Share» widget sample';
+$L['cfg_sample_block'] = array('«Share» widget sample');
 $L['cfg_code_block'] = array('Code for widget','This code included here as sample.
 	It would be inserted on pages automatically if you use <strong>{SOCIAL_SHARE}</strong>
 	or <strong>{PHP.social_share}</strong> tag in your templates.');

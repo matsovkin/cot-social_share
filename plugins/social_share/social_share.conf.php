@@ -53,6 +53,7 @@ if (defined('SOCIAL_SHARE_CONF')) {
 					$cb_tpl = $socs_tpl->text('CB_TPL');
 					foreach ($socs_service_data as $scode=>$sservice) {
 						$it = array();
+						$R['input_checkbox_'.$scode] = $cb_tpl; // for Cotonti prior version 9.6
 						$cb = cot_checkbox(in_array($scode, $config_values), $scode, $sevice_names[$scode],array('class'=>'ssi'),$scode,$cb_tpl);
 						$socs_tpl->assign('cb',$cb);
 						$socs_tpl->parse('CB_LIST.BLOCK.ITEM');
