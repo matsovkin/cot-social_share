@@ -4,11 +4,11 @@
 Code=social_share
 Name=Social share
 Description=Allow to share pages with various social services
-Version=0.1.1
-Date=2012-Oct-14
+Version=0.1.2
+Date=2012-Oct-16
 Author=Andrey Matsovkin
 Copyright=Copyright (c) 2008-2012, Andrey Matsovkin
-Notes=
+Notes=Tested on Siena 0.9.5-0.9.12
 Auth_guests=R1
 Lock_guests=W2345A
 Auth_members=RW1
@@ -38,16 +38,8 @@ code_block=18:text:::Code block
  * @author Andrey Matsovkin
  * @copyright Copyright (c) 2008-2012
  * @license Distributed under BSD License.
-var1=11:select:0,1,2,3,4,5,6:3:Description
-var2=12:radio:0,1:1:Enable this
-var3=13:string::test:Test string
-var4=14:callback:cot_get_editors():markitup:Simple callback
-var5=15:separator:::Separator
-var6=16:range:0,5:1:Range
-var7_multiselect=17:text:0,5:1,2:Text
 */
 
 if (!defined('COT_CODE')) { die('Wrong URL ('.array_pop(explode("\\",__FILE__)).').'); }
-
 
 ?>
