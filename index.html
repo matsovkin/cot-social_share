@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Social share by macik</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Social share</h1>
+        <p class="header">«Social share». Extension for Cotonti CMF</p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/macik/cot-social_share/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/macik/cot-social_share/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/macik/cot-social_share">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/macik">macik</a></p>
+
+
+      </header>
+      <section>
+        <h1>Social share</h1>
+
+<p>Plugin for Cotonti CMF. It adds «Share it» widget to pages of cite.</p>
+
+<h2>Description</h2>
+
+<p>Adds easy to use widget for social networks sharing to pages of your site.
+You can setup list of allowed services choosing from more than 20 social sites.
+Basicly all you need to enable it - is to install Extension. It will automatically adds
+widget to bottom of you pages and news. Also you can finetune placement of widget 
+with manually adding <code>{SOCIAL_SHARE}</code> tag in tpl files.</p>
+
+<h2>Features</h2>
+
+<ul>
+<li>Easy «one-click-install» (for basic use you don't need adding TPL tags)</li>
+<li>Highly configurable (widget style and list of services)</li>
+<li>I18n for widget based on users profile</li>
+<li>No external dependencies (working without jQuery use)</li>
+<li>Allowed to insert in any block of site with <code>{PHP.social_share}</code> tag</li>
+</ul><h2>Requirements</h2>
+
+<p>Developed for Cotonti Siena (0.9.x branch). 
+Worked with/or without jQuery enabled.</p>
+
+<h2>Demo page</h2>
+
+<p>Comming soon…</p>
+
+<h2>Version info</h2>
+
+<p>Current version 1.3 tested with:</p>
+
+<ul>
+<li>
+<a href="http://www.cotonti.com">Cotonti</a> Siena. Versions on 0.9.5 - 0.9.11 (actual).</li>
+<li>Skins: <code>HTML Kickstart</code>, <code>Nemesis</code>
+</li>
+<li>Admin skins: <code>standard</code>, <code>bootstrap</code>, <code>priori</code>
+</li>
+</ul><h3>How extension works</h3>
+
+<p>Simply generates widget code based on your Extension settings (widget style and services list).
+Then auto insert widget code in bottom of pages or place specified with own tag in TPL files.</p>
+
+<h2>Install</h2>
+
+<ul>
+<li>Unpack, copy files to root folder of your site.</li>
+<li>Install via Admin → Extensions menu (<code>Administration panel → Extensions</code>)</li>
+</ul><h3>Comments</h3>
+
+<p>After install you must see widget block on bottom of articles and news pages 
+(accordingly you had <code>page</code> and <code>news</code> modules installed).
+You can choose used services, language and widget style in Extension config menu
+(<code>Administration panel → Extensions → Social share → Configuration</code>).</p>
+
+<p>If you want to change location of widget switch off «autoinsertion» mode in Extension config menu 
+and manually add tag <code>{SOCIAL_SHARE}</code> in one of the templates: </p>
+
+<ul>
+<li><code>index.tpl</code></li>
+<li><code>news.tpl</code></li>
+<li><code>page.tpl</code></li>
+<li><code>page.list.tpl</code></li>
+<li><code>forum.posts.tpl</code></li>
+</ul><p>If you suppose to insert widget in other templates — use <code>{PHP.social_share}</code> tag.
+If you want to change default <code>url</code>, <code>title</code> or <code>description</code> of sharing page 
+— use funciton style tag <code>{PHP|social_share('url','title','tag')}</code>.</p>
+
+<h2>References</h2>
+
+<ul>
+<li>
+<a href="http://Cotonti.com/">Cotonti.com</a> -- Home of Cotonti CMF</li>
+</ul>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
+  </body>
+</html>
