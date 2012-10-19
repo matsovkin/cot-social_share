@@ -4,8 +4,8 @@
 Code=social_share
 Name=Social share
 Description=Allow to share pages with various social services
-Version=0.1.2
-Date=2012-Oct-16
+Version=0.1.3
+Date=2012-Oct-18
 Author=Andrey Matsovkin
 Copyright=Copyright (c) 2008-2012, Andrey Matsovkin
 Notes=Tested on Siena 0.9.5-0.9.12
@@ -16,6 +16,7 @@ Lock_members=2345
 [END_COT_EXT]
 
 [BEGIN_COT_EXT_CONFIG]
+auto_insert=01:select:0,1:1:Type of widget insertion (auto or manual by tag)
 load_type=02:select:0,1:0:Load type
 cdn_use=03:select:0,1:0:Source to load share.js lib (43kb) [this site/Yandex CDN]
 sep1=04:separator:::Separator
@@ -34,7 +35,7 @@ code_block=18:text:::Code block
  * Social share plugin for Cotonti CMF
  *
  * @package social_share
- * @version 0.1.0
+ * @version 0.1.3
  * @author Andrey Matsovkin
  * @copyright Copyright (c) 2008-2012
  * @license Distributed under BSD License.

@@ -12,6 +12,9 @@ defined('COT_CODE') or die('Wrong URL');
 $L['plu_title'] = 'Social share'; // для заголовка страницы
 $L['info_desc'] ='Adds «Share» block for sharing in social networks';
 
+$L['cfg_auto_insert'] = array('Widget code insertion type');
+$L['cfg_auto_insert_params'] = array('Manual by editing TPL tags','Automatic');
+
 $L['cfg_load_type'] = array('Loads library ');
 $L['cfg_load_type_params'] = array('Only on pages, news, forums','On all pages of site');
 
