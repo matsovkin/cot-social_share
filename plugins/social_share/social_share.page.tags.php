@@ -9,7 +9,6 @@ Hooks=pagetags.main
  * Get data from page tags for further use
  *
  * @package social_share
- * @version 0.1.0
  * @author Andrey Matsovkin
  * @copyright Copyright (c) 2008-2012
  * @license Distributed under BSD License.

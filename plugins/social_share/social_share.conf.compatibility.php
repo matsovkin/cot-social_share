@@ -10,7 +10,6 @@ Hooks=admin.config.edit.main
  * Code for compatibility with old Cotonti Siena (prior to 0.9.10)
  *
  * @package social_share
- * @version 0.1.0
  * @author Andrey Matsovkin
  * @copyright Copyright (c) 2008-2012
  * @license Distributed under BSD License.

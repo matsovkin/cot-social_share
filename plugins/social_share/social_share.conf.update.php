@@ -9,7 +9,6 @@ Hooks=admin.config.edit.first
  * Social share extension admin settings update part
  *
  * @package social_share
- * @version 0.1.0
  * @author Andrey Matsovkin
  * @copyright Copyright (c) 2008-2012
  * @license Distributed under BSD License.
