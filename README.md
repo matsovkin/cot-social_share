@@ -3,6 +3,8 @@ Social share
 
 Plugin for Cotonti CMF. It adds «Share it» widget to pages of cite.
 
+![Social share widget screenshot](http://macik.github.com/cot-social_share/images/social_share_00.png)
+
 Description
 -----------
 
@@ -31,6 +33,9 @@ Demo page
 ---------
 
 Comming soon…
+
+![Social share widget screenshot 2](http://macik.github.com/cot-social_share/images/social_share_01_tbn.png)
+![Social share widget screenshot 3](http://macik.github.com/cot-social_share/images/social_share_02_tbn.png)
 
 
 Version info
