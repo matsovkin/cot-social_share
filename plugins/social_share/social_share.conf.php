@@ -72,12 +72,11 @@ if (defined('SOCIAL_SHARE_CONF')) {
 	}
 	elseif ($config_name === 'sample_block')
 	{
-		$config_input = '';//$config_input = '';
-		$config_more = '<div class="sample_block" id="sample_block"></div>';
+		$config_input = '<div class="sample_block" id="sample_block"></div>';
 	}
 	elseif ($config_name === 'code_block')
 	{
-		$config_input = cot_textarea($config_name, $config_value, 5, 40,array('disabled'=>'disabled'));
+		$config_input = cot_textarea($config_name, $config_value, 5 ,120,array('disabled'=>'disabled'));
 	}
 	if ( $process_it ) {
 		$t->assign(array(

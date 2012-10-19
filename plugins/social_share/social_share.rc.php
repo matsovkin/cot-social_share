@@ -87,9 +87,6 @@ if (defined('SOCIAL_SHARE_CONF')) { // only for config part
 	$R['ss_lastitem'] = ' {$item}';
 	$R['ss_listclear'] = '<br/><br/>{$clear}';
 	$R['ss_simplelist'] = '<br/>{$info}: {$list}';
-	if (!$cfg['jquery']) $no_jquery = ' onchange="update_widget();"';
-	$R['input_select'] = '<select id="{$name}" name="{$name}"'.$no_jquery.'{$attrs}>{$options}</select>{$error}';
-	$R['input_textarea'] = '<textarea id="{$name}" name="{$name}" rows="{$rows}" cols="{$cols}"{$attrs}>{$value}</textarea>{$error}';
 
 	$ttl = htmlspecialchars($cfg['maintitle'].'. '.$cfg['subtitle'],ENT_QUOTES);
 	$rc_embed_func("var url='{$cfg['mainurl']}', title='$ttl', lang='{$socs_cfg['lang']}';");

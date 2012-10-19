@@ -7,7 +7,8 @@ Hooks=admin.config.edit.main
 
 /**
  * Social share extension admin settings
- * Code for compatibility with old Cotonti Siena (prior to 0.9.10)
+ * Code for compatibility
+ * 	- with old Cotonti Siena (prior to 0.9.10)
  *
  * @package social_share
  * @author Andrey Matsovkin
@@ -18,6 +19,10 @@ Hooks=admin.config.edit.main
 defined('COT_CODE') or die('Wrong URL');
 
 if (defined('SOCIAL_SHARE_CONF')) {
+	if (!$cfg['jquery']) $no_jquery = ' onchange="update_widget();"';
+	$R['input_select'] = '<select id="{$name}" name="{$name}"'.$no_jquery.'{$attrs}>{$options}</select>{$error}';
+	$R['input_textarea'] = '<textarea id="{$name}" name="{$name}" rows="{$rows}" cols="{$cols}"{$attrs}>{$value}</textarea>{$error}';
+
 	if (!function_exists('cot_admin_config_get_titles')) {
 		/**
 		 * Helper function that generates selection titles.

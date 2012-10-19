@@ -6,6 +6,10 @@ Plugin for Cotonti CMF. Designed for adding «share this» widget on pages
 Changelog
 ---------
 
+### v1.4beta
+
++ Compatibility with Admin «Bootstrap» theme 
+
 ### v1.3
 
 Added autoinsertion of widget for pages and news
