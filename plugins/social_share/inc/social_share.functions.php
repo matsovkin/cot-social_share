@@ -3,6 +3,13 @@ if (!defined('COT_CODE') && !defined('COT_PLUG')) {
 	die('Wrong URL ('.array_pop(explode("\\",__FILE__)).').');
 }
 
+/**
+ * Return widget code based on Url, Title and description of page
+ * @param string $url URL of sharing page
+ * @param string $title Title of sharing page
+ * @param string $desc Description of sharing page
+ * @return string Html code of widget
+ */
 function share_widget_code($url='',$title='',$desc=''){
 	global $socs_tpl;
 	$socs_tpl->assign(array(
@@ -14,7 +21,14 @@ function share_widget_code($url='',$title='',$desc=''){
 	return $socs_tpl->text();
 }
 
-
+/**
+ * Generates Html code for sharing widget based on Url, Title and description of page or
+ * default values of current page
+ * @param string $url URL of sharing page
+ * @param string $title Title of sharing page
+ * @param string $desc Description of sharing page
+ * @return string
+ */
 function social_share($url='',$title='',$desc=''){
 	global $_GET,$cfg,$out;
 	if (!$url) {
@@ -35,5 +49,7 @@ function social_share($url='',$title='',$desc=''){
 
 	return share_widget_code(($url),($title),($desc));
 }
+
+
 
 ?>

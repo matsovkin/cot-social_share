@@ -19,25 +19,28 @@ defined('COT_CODE') or die('Wrong URL');
 if (defined('SOCIAL_SHARE_CONF')) {
 	if ($a == 'update')
 	{
-		// filters posted values for «multiselect» params
-		foreach ($_POST as $param=>$value){
-			if ($param== 'services')
+		// filters posted values for «simplelist» params
+		$sql = $db->query("SELECT * FROM $db_config
+							WHERE config_owner = ? AND config_cat = ? $where_cat",
+							array_merge(array($o, $p),$sub_param));
+		while ($row = $sql->fetch()) {
+			$config_name = $row['config_name'];
+			if (in_array($config_name, $checklists_to_track) && $_POST[$config_name])
 			{
-				$sql = $db->query("SELECT * FROM $db_config
-								WHERE config_owner = ? AND config_cat = ? AND config_name = ? $where_cat",
-								array_merge(array($o, $p,$param),$sub_param));
-				while ($row = $sql->fetch()) {
+				$config_variants = array_unique(array_map('trim', explode(',',$row['config_default'])));
+				if ($config_name == 'services') // overrides for SocSocial
+				{
 					$config_variants = $socs_services;
-					$config_values = array_unique(array_map('trim', explode(',',$value)));
-					// filters unknown values
-					foreach ($config_values as $k => &$v) {
-						if (!in_array($v, $config_variants)) unset($config_values[$k]);
-					}
-					$_POST[$param] = implode(',',$config_values);
 				}
-				$sql->closeCursor();
+				$config_values = array_unique(array_map('trim', explode(',',$_POST[$config_name])));
+				foreach ($config_values as $k => &$v)
+				{
+					if (!in_array($v, $config_variants)) unset($config_values[$k]);
+				}
+				$_POST[$config_name] = implode(',', $config_values);
 			}
 		}
+		$sql->closeCursor();
 	}
 }
 

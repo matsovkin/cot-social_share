@@ -18,19 +18,40 @@ Hooks=admin.config.edit.loop
 defined('COT_CODE') or die('Wrong URL');
 
 if (defined('SOCIAL_SHARE_CONF')) {
-	if ($config_name === 'services')  // Part 1
-	{ // while creating params config table
-		// extending only COT_CONFIG_TYPE_TEXT parameters
-		$config_variants = $socs_services;
+
+	if (in_array($config_name, $checklists_to_track))
+	{
+		$config_variants = array_map('trim',explode(',',$config_default));
+		if ($config_name  === 'services')
+		{ // special for SocSocial
+			$config_variants = $socs_services;
+		}
+
+
 		$config_type = 'checklistbox';
 		if (sizeof($config_variants)) {
-			// if no jQuery used - allow only «simplelist» type
-			if (!$cfg['jquery'] && $config_type=='checklistbox') $config_type = 'simplelist';
 			$config_values = array_unique(array_map('trim', explode(',',$config_value)));
 			$config_variants_titles = cot_admin_config_get_titles($config_name, $config_variants);
 			$def_attr = array('readonly'=>'readonly','id'=>$config_name);
-			if (!$cfg['jquery']) $def_attr['onchange'] = 'update_widget();';
-			switch ($config_type) {
+			if (!$cfg['jquery'])
+			{
+				//$def_attr['onchange'] = 'update_widget();';
+				$config_input = extdev_simplelist($config_name, $config_values, $config_variants, $config_variants_titles, $def_attr);
+			} else {
+				$tmp_checkbox = $R['input_checkbox'];
+				$tmp_input = $R['input_text'];
+				$R['input_checkbox'] = '<label><input type="checkbox" name="{$name}" value="{$value}"{$checked}{$attrs} /><i class="s_icon_{$name}"></i> {$title}</label>';
+				$R['input_text'] = '<div class="all_cb"><label><input class="all_cb" type="checkbox" value="1" /> '.$L['ss_checkall'].'</label></div><input type="text" name="{$name}" value="{$value}" {$attrs} />';
+				//$R['input_checklistbox_block'] = '<ul id="ul_{$name}" style="list-style:none;">{$list}</ul>';
+
+				$config_input = extdev_checklistbox($config_name, $config_values, $config_variants, $config_variants_titles);
+				$R['input_checkbox'] = $tmp;
+				$R['input_text'] = $tmp_input;
+			}
+
+
+		}
+/*			switch ($config_type) {
 				case 'simplelist':
 					$last = $config_variants[sizeof($config_variants)-1];
 					$item_list = '';
@@ -66,8 +87,7 @@ if (defined('SOCIAL_SHARE_CONF')) {
 					$process_it = true;
 					break;
 				default:
-			}
-		}
+			}*/
 
 	}
 	elseif ($config_name === 'sample_block')
@@ -78,13 +98,10 @@ if (defined('SOCIAL_SHARE_CONF')) {
 	{
 		$config_input = cot_textarea($config_name, $config_value, 5 ,120,array('disabled'=>'disabled'));
 	}
-	if ( $process_it ) {
-		$t->assign(array(
-						'ADMIN_CONFIG_ROW_CONFIG' => $config_input,
-						'ADMIN_CONFIG_ROW_CONFIG_MORE' => $config_more
+	$t->assign(array(
+				'ADMIN_CONFIG_ROW_CONFIG' => $config_input,
+				'ADMIN_CONFIG_ROW_CONFIG_MORE' => $config_more
 		));
-
-	}
 
 }
 
