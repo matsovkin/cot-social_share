@@ -35,6 +35,7 @@ function sl_toggle(item,id){
  * Generates code for «Share» widget, updates widget and show its code
  */
 function update_widget(){
+	console.log('widget update');
 	var ell = document.getElementById('force_lang');
 	var eld = document.getElementById('default_lang');
 	var elt = document.getElementById('block_type');
@@ -66,4 +67,4 @@ function update_widget(){
 	elcb.innerHTML = lib+code;
 }
 
-update_widget();
+setTimeout('update_widget()',1000);
