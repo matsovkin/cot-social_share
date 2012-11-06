@@ -18,7 +18,8 @@ if (!defined('COT_CODE') && !defined('COT_PLUG')) { die('Wrong URL ('.array_pop(
 $plug_name = 'social_share';
 
 // to use outside hook code
-global $socs_services, $socs_cfg, $socs_service_data, $sevice_names, $socs_tpl, $rc_link_func;
+global $socs_services, $socs_cfg, $socs_service_data, $sevice_names,
+	$socs_tpl, $rc_link_func, $checklists_to_track, $version_number;
 $socs_cfg = $cfg['plugin'][$plug_name]; // get plug conf
 
 $rc_link_func = 'cot_rc_link_footer';
@@ -38,13 +39,16 @@ if (defined('COT_ADMIN') && // in plugin config page
 
 	define('SOCIAL_SHARE_CONF',true);
 	define('EXTDEV_OFF',true); // switch off ExtDev if exists
-	$version = str_replace('.','',$cfg['version']);
+	$checklists_to_track[] = 'services';
+
+	$version_number = str_replace('.','',$cfg['version']);
 	// tracks buggy admin theme template
-	// used header cot_rc functions instead fotter versions for Cotonti prior v.9.8
-	if ($version<98) {
+	// used header cot_rc functions instead footer versions for Cotonti prior v.9.8
+	if ($version_number < 98) {
 		$rc_link_func = 'cot_rc_add_file';
 		$rc_embed_func = 'cot_rc_embed';
 	}
+	require_once cot_incfile($plug_name, 'plug','config.functions');
 }
 
 if (defined('SOCIAL_SHARE') || defined('SOCIAL_SHARE_CONF')) { // common code
@@ -79,17 +83,12 @@ if (defined('SOCIAL_SHARE')) {
 
 if (defined('SOCIAL_SHARE_CONF')) { // only for config part
 	cot_rc_link_file($cfg['plugins_dir'] . '/social_share/tpl/social_share.css');
-	if ($cfg['jquery']) $rc_link_func($cfg['plugins_dir'].'/social_share/js/social_share.admin.js');
-	else $rc_link_func($cfg['plugins_dir'].'/social_share/js/social_share.admin.nojquery.js');
-
-	// for extending Extension config page
-	$R['ss_listitem'] = ' {$item},&nbsp;';
-	$R['ss_lastitem'] = ' {$item}';
-	$R['ss_listclear'] = '<br/><br/>{$clear}';
-	$R['ss_simplelist'] = '<br/>{$info}: {$list}';
 
 	$ttl = htmlspecialchars($cfg['maintitle'].'. '.$cfg['subtitle'],ENT_QUOTES);
-	$rc_embed_func("var url='{$cfg['mainurl']}', title='$ttl', lang='{$socs_cfg['lang']}';");
+	cot_rc_embed("var url='{$cfg['mainurl']}', title='$ttl', lang='{$socs_cfg['lang']}';");
+
+	if ($cfg['jquery']) $rc_link_func($cfg['plugins_dir'].'/social_share/js/social_share.admin.js');
+	else $rc_link_func($cfg['plugins_dir'].'/social_share/js/social_share.admin.nojquery.js');
 
 	$all_services_data = array(
 					'blogger' => array('link'=>'http://www.blogger.com/','name'=>'Blogger'),
@@ -127,10 +126,6 @@ if (defined('SOCIAL_SHARE_CONF')) { // only for config part
 			$sevice_names[$sservice] = $all_services_data[$sservice]['name'];
 		}
 	}
-
-	// template for checklistbox
-	if ($cfg['jquery']) $socs_tpl = new XTemplate(cot_tplfile($plug_name.'.conf', 'plug'));
-
 
 }
 

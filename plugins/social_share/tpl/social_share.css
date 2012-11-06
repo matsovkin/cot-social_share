@@ -8,12 +8,12 @@ textarea#code_block {
 	/* width:170px; */
 }
 
-li.s_item{
+li.cb_item{
 	display:inline;
 	list-style: none;
 
 }
-li.s_item label{
+li.cb_item label{
 	display:block;
 	float:left;
 	padding:7px 0 0;
@@ -37,22 +37,22 @@ div.all_cb {
 	overflow: hidden;
 }
 
-.b-share__list-icons .s_item {
+.b-share__list-icons .cb_item {
 	position: relative;
 	float: left;
 	margin: 30px 21px 0 0;
 }
 
-.b-share__list-icons .s_item i {
+.b-share__list-icons .cb_item i {
 	position: absolute;
 	margin: -17px 0 0;
 }
 
-.s_item {
+.cb_item {
 	margin: 10px 0;
 }
 
-.s_item i {
+.cb_item i {
 	display: -moz-inline-box;
 	display: inline-block;
 	margin: 0 8px 0;

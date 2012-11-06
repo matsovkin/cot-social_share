@@ -6,9 +6,11 @@ Plugin for Cotonti CMF. Designed for adding «share this» widget on pages
 Changelog
 ---------
 
-### v1.4beta
+### v1.4
 
-+ Compatibility with Admin «Bootstrap» theme 
++ Compatibility with «Bootstrap» Admin theme
+* Some refactoring for config menu code (extended UI functions moved to separate file)
++ Config menu support NoJquery mode and NoScript users
 
 ### v1.3
 
@@ -34,11 +36,11 @@ Adding univeral tags and ability to use in news and forums. Uploaded to GitHub
 
 ### v1.0
 
-Adding advanced configuration 
+Adding advanced configuration
 
 * Added lang selection with default lang
 * Added widget type selection
-* Added ability to use CDN or local lib 
+* Added ability to use CDN or local lib
 
 ### v0.5
 
