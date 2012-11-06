@@ -20,7 +20,7 @@ Features
 * Easy «one-click-install» (for basic use you don't need adding TPL tags)
 * Highly configurable (widget style and list of services)
 * I18n for widget based on users profile
-* No external dependencies (working without jQuery use)
+* No external dependencies (working without jQuery)
 * Allowed to insert in any block of site with `{PHP.social_share}` tag
 
 Requirements
@@ -41,7 +41,7 @@ Comming soon…
 Version info
 ------------
 
-Current version 1.3 tested with:
+Versions 1.3, 1.4 tested with:
 * [Cotonti](http://www.cotonti.com) Siena. Versions on 0.9.5 - 0.9.11 (actual).
 * Skins: `HTML Kickstart`, `Nemesis`
 * Admin skins: `standard`, `bootstrap`, `priori`
