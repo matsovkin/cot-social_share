@@ -1,9 +1,9 @@
-<?PHP
+<?php
 /**
  * Localization file for Social share
  * @version 0.1.0
  * @author Andrey Matsovkin
- * @copyright Copyright (c) 2008-2012
+ * @copyright Copyright (c) 2008-2013
  * @license Distributed under BSD License.
  */
 
@@ -61,4 +61,3 @@ if (defined('SOCIAL_SHARE_CONF')){
 
 }
 
-?>

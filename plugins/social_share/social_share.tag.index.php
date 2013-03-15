@@ -1,4 +1,4 @@
-<?PHP
+<?php
 /* ====================
 [BEGIN_COT_EXT]
 Hooks=index.tags
@@ -11,7 +11,7 @@ Tags=index.tpl:{SOCIAL_SHARE}
  *
  * @package social_share
  * @author Andrey Matsovkin
- * @copyright Copyright (c) 2008-2012
+ * @copyright Copyright (c) 2008-2013
  * @license Distributed under BSD License.
  */
 
@@ -22,4 +22,3 @@ if (defined('SOCIAL_SHARE')) {
 	$t->assign('SOCIAL_SHARE',$code);
 }
 
-?>

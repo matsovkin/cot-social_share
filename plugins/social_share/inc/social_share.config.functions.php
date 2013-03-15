@@ -6,7 +6,7 @@ defined('COT_CODE') or die('Wrong URL');
  * @package Social share
  * @version 0.1.0
  * @author Andrey Matsovkin
- * @copyright Copyright (c) 2008-2012
+ * @copyright Copyright (c) 2008-2013
  * @license Distributed under BSD License.
  */
 
@@ -126,4 +126,3 @@ if (!function_exists('extdev_checklistbox'))
 }
 
 
-?>

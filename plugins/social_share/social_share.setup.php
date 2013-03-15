@@ -1,4 +1,4 @@
-<?PHP
+<?php
 /* ====================
 [BEGIN_COT_EXT]
 Code=social_share
@@ -37,10 +37,9 @@ code_block=18:text:::Code block
  * @package social_share
  * @version 0.1.3
  * @author Andrey Matsovkin
- * @copyright Copyright (c) 2008-2012
+ * @copyright Copyright (c) 2008-2013
  * @license Distributed under BSD License.
 */
 
 if (!defined('COT_CODE')) { die('Wrong URL ('.array_pop(explode("\\",__FILE__)).').'); }
 
-?>

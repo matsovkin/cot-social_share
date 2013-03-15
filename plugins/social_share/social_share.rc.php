@@ -1,4 +1,4 @@
-<?PHP
+<?php
 /* ====================
 [BEGIN_COT_EXT]
 Hooks=rc
@@ -10,7 +10,7 @@ Hooks=rc
  *
  * @package social_share
  * @author Andrey Matsovkin
- * @copyright Copyright (c) 2008-2012
+ * @copyright Copyright (c) 2008-2013
  * @license Distributed under BSD License.
  */
 
@@ -129,4 +129,3 @@ if (defined('SOCIAL_SHARE_CONF')) { // only for config part
 
 }
 
-?>

@@ -1,4 +1,4 @@
-<?PHP
+<?php
 /* ====================
 [BEGIN_COT_EXT]
 Hooks=admin.config.edit.first
@@ -10,7 +10,7 @@ Hooks=admin.config.edit.first
  *
  * @package social_share
  * @author Andrey Matsovkin
- * @copyright Copyright (c) 2008-2012
+ * @copyright Copyright (c) 2008-2013
  * @license Distributed under BSD License.
  */
 
@@ -44,4 +44,3 @@ if (defined('SOCIAL_SHARE_CONF')) {
 	}
 }
 
-?>
