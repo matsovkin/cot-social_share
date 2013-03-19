@@ -1,16 +1,16 @@
 <?php
 /**
- * Localization file for Social share
+ * Localization file for Some plugin
  * @version 0.1.0
- * @author Andrey Matsovkin
+ * @author Your Name
  * @copyright Copyright (c) 2008-2013
  * @license Distributed under BSD License.
  */
 
 defined('COT_CODE') or die('Wrong URL');
 
-$L['plu_title'] = 'Social share'; // для заголовка страницы
-$L['info_desc'] ='Adds «Share» block for sharing in social networks';
+$L['plu_title'] = 'Some plugin';
+$L['info_desc'] ='This plugin provides addition functions to Cotonti CMS';
 
 $L['cfg_auto_insert'] = array('Widget code insertion type');
 $L['cfg_auto_insert_params'] = array('Manual by editing TPL tags','Automatic');
